@@ -120,8 +120,9 @@ a:hover {
 
 .nav__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding: var(--spacing-md) var(--container-padding);
 }
 
 .nav__logo {
@@ -135,6 +136,8 @@ a:hover {
     display: flex;
     gap: var(--spacing-lg);
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav__link {
@@ -151,10 +154,14 @@ a:hover {
     padding: calc(var(--spacing-xl) * 2) 0;
     text-align: center;
     background-color: var(--color-background-alt);
+    background-image: url('../images/bg/bcg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero::before {
@@ -164,7 +171,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.85);
     z-index: 1;
 }
 
