@@ -1,0 +1,133 @@
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color-background);
+        flex-direction: column;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        transition: right var(--transition-base);
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav__menu.active {
+        right: 0;
+    }
+
+    .nav__toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: var(--spacing-xs);
+    }
+
+    .nav__toggle-icon {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-text);
+        position: relative;
+        transition: background-color var(--transition-base);
+    }
+
+    .nav__toggle-icon::before,
+    .nav__toggle-icon::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-text);
+        transition: transform var(--transition-base);
+    }
+
+    .nav__toggle-icon::before {
+        top: -6px;
+    }
+
+    .nav__toggle-icon::after {
+        bottom: -6px;
+    }
+
+    .nav__toggle.active .nav__toggle-icon {
+        background-color: transparent;
+    }
+
+    .nav__toggle.active .nav__toggle-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .nav__toggle.active .nav__toggle-icon::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+
+    /* Adjust spacing for mobile */
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero {
+        padding: calc(var(--spacing-lg) * 2) 0;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .skills__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Desktop Adjustments */
+@media (min-width: 1440px) {
+    :root {
+        --container-max-width: 1400px;
+        --font-size-base: 18px;
+    }
+
+    .hero__content {
+        max-width: 1000px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .nav,
+    .btn,
+    .contact__link {
+        display: none;
+    }
+
+    body {
+        color: black;
+        background: white;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+} 
