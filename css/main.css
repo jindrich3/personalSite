@@ -19,7 +19,7 @@
     
     /* Typography */
     --font-primary: 'Inter', sans-serif;
-    --font-secondary: 'Playfair Display', serif;
+    --font-secondary: 'Space Grotesk', sans-serif;
     --font-size-base: 16px;
     --line-height-base: 1.5;
     
@@ -381,6 +381,71 @@ a:hover {
 .timeline__details {
     list-style-position: inside;
     margin-top: var(--spacing-sm);
+}
+
+/* Education Section */
+.education__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.education__item {
+    background-color: var(--color-background-alt);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.education__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--color-primary);
+    transition: height var(--transition-base);
+}
+
+.education__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.education__item:hover::before {
+    height: 100%;
+}
+
+.education__title {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.education__institution {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.education__period {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.education__focus,
+.education__details {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* Skills Grid */
