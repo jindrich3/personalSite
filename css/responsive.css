@@ -79,6 +79,11 @@
     .container {
         padding: 0 var(--spacing-md);
     }
+
+    .hero__profile-img {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /* Tablet Adjustments */
@@ -89,6 +94,11 @@
 
     .skills__grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero__profile-img {
+        width: 220px;
+        height: 220px;
     }
 }
 

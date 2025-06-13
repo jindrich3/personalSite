@@ -151,11 +151,28 @@ a:hover {
     padding: calc(var(--spacing-xl) * 2) 0;
     text-align: center;
     background-color: var(--color-background-alt);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1;
 }
 
 .hero__content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .hero__title {
@@ -171,6 +188,23 @@ a:hover {
 .hero__tagline {
     font-size: 1.125rem;
     margin-bottom: var(--spacing-lg);
+}
+
+.hero__profile {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero__profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-base);
+}
+
+.hero__profile-img:hover {
+    transform: scale(1.05);
 }
 
 /* Buttons */
